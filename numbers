@@ -1,0 +1,103 @@
+#!/bin/bash
+
+# demonstrate using numbers
+
+echo  See it do math into a non-number variable
+newvar=1
+num=3+$newvar
+echo "   3+\$newvar = $num"
+
+echo -e "\nNow try with parentheses"
+num=$((3+$newvar))
+echo "   3+\$newvar = $num"
+
+
+echo -e "\nNow see it do the same math when the result variable"
+echo   "    is declared as a number"
+declare -i num
+num=3+$newvar
+echo "   3+\$newvar = $num"
+
+echo -e "\nAnd if I try to put letters into my int"
+num=hello
+echo "     When I set an integer to a letter, it made \$num $num"
+
+echo -e "\nSee how declare -i shows you all variables of i type"
+declare -i
+
+declare -i n
+echo -e "\nNow see how to set a binary number into your int"
+echo "        setting using n=2#101"
+n=2#101
+echo "n is now $n"
+
+echo -e "\nNow see how to set a hex number into your int"
+echo "         setting using n=16#1F"
+n=16#1F
+echo "n is now $n"
+
+echo -e "\nNow see how to set an octal number into your int"
+echo "      setting using n=16#1F"
+n=16#1F
+echo "n is now $n"
+
+echo -e "\nNow see how to set an octal number into your int"
+echo "     setting using n=017 which is 17 with a leading zero"
+n=017
+echo "n is now $n"
+
+echo -e "\nNow see how to set a decimal number into your int"
+echo "    just removed the leading zero"
+echo "    setting using n=17"
+n=17
+echo "n is now $n"
+
+output
+------
+mandahasa48@instance-1:~/shell-scripts$ chmod +x numbers
+mandahasa48@instance-1:~/shell-scripts$ ./numbers
+See it do math into a non-number variable
+   3+$newvar = 3+1
+
+Now try with parentheses
+   3+$newvar = 4
+
+Now see it do the same math when the result variable
+    is declared as a number
+   3+$newvar = 4
+
+And if I try to put letters into my int
+     When I set an integer to a letter, it made $num 0
+
+See how declare -i shows you all variables of i type
+declare -i BASHPID
+declare -ir EUID="1000"
+declare -i HISTCMD
+declare -i OPTIND="1"
+declare -ir PPID="805"
+declare -i RANDOM
+declare -i SRANDOM
+declare -ir UID="1000"
+declare -i num="0"
+
+Now see how to set a binary number into your int
+        setting using n=2#101
+n is now 5
+
+Now see how to set a hex number into your int
+         setting using n=16#1F
+n is now 31
+
+Now see how to set an octal number into your int
+      setting using n=16#1F
+n is now 31
+
+Now see how to set an octal number into your int
+     setting using n=017 which is 17 with a leading zero
+n is now 15
+
+Now see how to set a decimal number into your int
+    just removed the leading zero
+    setting using n=17
+n is now 17
+mandahasa48@instance-1:~/shell-scripts$ 

@@ -1,0 +1,93 @@
+#!/bin/bash
+echo \$home is $HOME
+echo \$PATH is $PATH
+echo \$PS1 which is my prompt is $PS1
+echo \$# is number of parms: $#
+echo \$\$ is PID of this shell $$
+echo I could create a file called /tmp/tmpfile_$$
+echo \$0 is $0
+echo \$1 is $1
+echo \$2 is $2
+echo \$3 is $3
+echo \$4 is $4
+echo "\$IFS is "
+echo "START $IFS END"
+echo '$@' is "$@"
+echo '"$*"' is $*
+echo '$*' is "$*"
+IFS=':'
+echo "\$IFS is "
+echo "START $IFS END"
+echo '$@' is $@
+echo '"$@"' is "$@"
+echo '$*' is $*
+echo '"$*"' is "$*"
+echo loop through '$@' no quotes
+for i in $@
+do
+echo $i
+done
+echo loop through '"@"' with quotes
+for i in "$@"
+do
+echo $i
+done
+
+echo loop through '$*' no quotes
+for i in $*
+do
+echo $i
+done
+echo loop through '"$*"' with quotes
+for i in "$*"
+do
+echo $i
+done
+
+unset IFS
+set $(date)
+echo "I reset parms to the date, so now the parms are "
+for i in $*
+do 
+echo $i 
+done
+
+output:
+--------
+
+mandahasa48@instance-1:~/shell-scripts$ ./positionalparameter 
+$home is /home/mandahasa48
+$PATH is /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+$PS1 which is my prompt is
+$# is number of parms: 0
+$$ is PID of this shell 978
+I could create a file called /tmp/tmpfile_978
+$0 is ./positionalparameter
+$1 is
+$2 is
+$3 is
+$4 is
+$IFS is 
+START  
+ END
+$@ is
+"$*" is
+$* is 
+$IFS is 
+START : END
+$@ is
+"$@" is
+$* is
+"$*" is 
+loop through $@ no quotes
+loop through "@" with quotes
+loop through $* no quotes
+loop through "$*" with quotes
+
+I reset parms to the date, so now the parms are 
+Sat
+Oct
+1
+15:40:54
+UTC
+2022

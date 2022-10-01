@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "Is it morning? Please answer yes or no "
+read timeofday
+
+if [  "$timeofday" = "yes"  -o  "$timeofday" = "yeah" ]
+then
+  echo "good morning"
+elif [[ "$timeofday" = [Nn]* ]] ; then
+  echo "good afternoon"
+else 
+  echo "sorry \$timeofday not recognized. Enter yes or no "
+  exit 1
+fi
+exit 0
+output
+-------
+
+mandahasa48@instance-1:~/shell-scripts$ ./logicaltest 
+Is it morning? Please answer yes or no 
+yes
+good morning
+mandahasa48@instance-1:~/shell-scripts$ ./logicaltest 
+Is it morning? Please answer yes or no 
+no
+good afternoon
+mandahasa48@instance-1:~/shell-scripts$ 

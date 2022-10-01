@@ -1,0 +1,43 @@
+#!/bin/bash
+
+myvar="Hi there"
+
+echo $myvar
+echo "$myvar"
+echo '$myvar'
+echo \$myvar
+
+echo $0
+echo "$0"
+echo '$0'
+echo \$0
+
+echo date
+echo "date"
+echo 'date'
+echo \date
+echo `date`
+
+echo Enter some text
+read myvar
+
+echo $myvar
+exit 0
+
+mandahasa48@instance-1:~/shell-scripts$ ./variables 
+Hi there
+Hi there
+$myvar
+$myvar
+./variables
+./variables
+$0
+$0
+date
+date
+date
+date
+Sat Oct 1 15:36:55 UTC 2022
+Enter some text
+testing
+testing

@@ -8,7 +8,7 @@ echo '$myvar'
 echo \$myvar
 
 echo $0
-echo "$0"
+echo "$0"  #variables are expanded inside ""
 echo '$0'
 echo \$0
 

@@ -22,6 +22,14 @@ echo Enter some text
 read myvar
 
 echo $myvar
+echo more samples
+
+a=apple
+echo $a
+echo '$a'
+echo "'$a'"
+echo '"$a"'
+
 exit 0
 
 mandahasa48@instance-1:~/shell-scripts$ ./variables 
@@ -41,3 +49,8 @@ Sat Oct 1 15:36:55 UTC 2022
 Enter some text
 testing
 testing
+apple
+$a
+'apple'
+"$a"
+
